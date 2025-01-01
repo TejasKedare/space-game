@@ -1,0 +1,64 @@
+.space-virus {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #ff5722 50%, #d32f2f);
+    border-radius: 50%;
+    box-shadow: 0 0 15px #ff5722, 0 0 25px #ff5722;
+  }
+  
+  .virus-core {
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(circle, #ff0000, #8b0000);
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .virus-spikes {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .spike {
+    position: absolute;
+    width: 6px;
+    height: 20px;
+    background: linear-gradient(to bottom, #ff5722, transparent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ff5722;
+    animation: pulse 1.5s infinite ease-in-out;
+  }
+  
+  .spike.bottom-left {
+    bottom: -5px;
+    left: 15%;
+    transform: rotate(-45deg);
+  }
+  
+  .spike.bottom-center {
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .spike.bottom-right {
+    bottom: -5px;
+    right: 15%;
+    transform: rotate(45deg);
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
