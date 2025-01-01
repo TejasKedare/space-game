@@ -2,7 +2,7 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <div className="flex justify-between items-center bg-background text-accent p-4 border-b-4 border-secondary">
+    <div className="flex justify-between items-center bg-background text-accent p-4">
       {/* Lives */}
       <div className="text-xl font-mono">
         <strong>Lives:</strong> <span className="text-error">3</span>
