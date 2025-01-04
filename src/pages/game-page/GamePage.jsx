@@ -1,16 +1,20 @@
-import React from 'react'
-import "./GamePage.css"
+import React from "react";
+import "./GamePage.css";
+import Player from "../../modules/player/Player";
 
 function GamePage() {
   return (
-    <div>
-        
-    <div class="bg-animation">
+    <div className="game-container">
+      {/* Background Animation */}
+      <div className="bg-animation">
         <div id="stars"></div>
         <div id="stars2"></div>
+      </div>
+
+      {/* Player */}
+      <Player />
     </div>
-    </div>
-  )
+  );
 }
 
-export default GamePage
+export default GamePage;
