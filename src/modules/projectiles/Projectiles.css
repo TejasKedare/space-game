@@ -1,0 +1,96 @@
+/* Regular Projectile */
+.regular-projectile {
+  width: 20px;
+  height: 20px;
+  background: #21c179;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Triangle shape */
+  position: absolute;
+  animation: glow 1s infinite;
+}
+
+  
+  /* Shotgun Projectile */
+  .shotgun-projectile {
+    width: 15px;
+    height: 15px;
+    background: #012853;
+    border: 2px solid #ff6500; /* Hollow square */
+    position: absolute;
+    animation: spin 1s linear infinite;
+  }
+  
+  /* Enemy Projectile - Glowing Ball */
+  .enemy-projectile-ball {
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle, #ff6500, #e90000);
+    border-radius: 50%;
+    position: absolute;
+    animation: glow 1s infinite;
+  }
+  
+  /* Enemy Projectile - Glowing Ring */
+  .enemy-projectile-ring {
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border: 3px solid #ffc300;
+    border-radius: 50%;
+    position: absolute;
+    animation: pulse 1.5s infinite;
+  }
+  
+  /* Boss Projectile */
+  .boss-projectile {
+    width: 35px;
+    height: 35px;
+    background: #ff6500;
+    clip-path: polygon(
+      25% 0%, 
+      75% 0%, 
+      100% 50%, 
+      75% 100%, 
+      25% 100%, 
+      0% 50%
+    ); /* Hexagon shape */
+    position: absolute;
+    animation: pulse 1.5s infinite;
+    box-shadow: 0 0 10px rgba(255, 101, 0, 0.8); /* Glow effect */
+  }
+  
+  /* Glow Animation */
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 5px #ff6500;
+    }
+    50% {
+      box-shadow: 0 0 15px #ff6500;
+    }
+  }
+  
+  /* Pulse Animation */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 0.6;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Spin Animation */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
