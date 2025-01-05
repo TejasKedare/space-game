@@ -1,7 +1,8 @@
-import React from "react";
+import React from "react";  
 import "./GamePage.css";
 import Player from "../../modules/player/Player";
 import EnemySaucer from "../../modules/enemy/EnemySaucer/EnemySaucer";
+import SpaceBug from "../../modules/enemy/SpaceBug/SpaceBug";
 
 function GamePage() {
   return (
@@ -17,6 +18,9 @@ function GamePage() {
  
       {/* Enemy Saucer */}
       <EnemySaucer/>
+
+      {/* Space Bug */}
+      {/* <SpaceBug/> */}
     </div>
   );
 }
