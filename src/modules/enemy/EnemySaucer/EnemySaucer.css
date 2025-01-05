@@ -1,30 +1,61 @@
 .enemy-saucer {
-    position: relative;
-    width: 50px;
-    height: 20px;
-    background: #4caf50; /* Alien green */
-    border-radius: 50%;
-    box-shadow: 0 0 10px #4caf50, 0 0 20px #4caf50;
+  position: absolute;
+  width: 90px;
+  height: 40px;
+  background: #333333; /* Darker color for the body */
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500; /* Darker but glowing orange accents */
+  animation: moveDownAndLeftRight 10s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.saucer-top {
+  position: absolute;
+  top: -15px;
+  width: 60px;
+  height: 15px;
+  background: #222222; /* Darker top */
+  border-radius: 50%;
+  box-shadow: inset 0 0 5px #222222;
+}
+
+.saucer-bottom {
+  position: absolute;
+  bottom: -8px;
+  width: 70px;
+  height: 12px;
+  background: #ff6347; /* Orange-red glow */
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff6347, 0 0 15px #ff6347; /* Propulsion effect */
+}
+
+/* Glowing cockpit to show the front */
+.saucer-cockpit {
+  position: absolute;
+  top: 5px;
+  left: 35%;
+  width: 20px;
+  height: 10px;
+  background: #ffcc00; /* Bright yellow to stand out */
+  border-radius: 50%;
+  box-shadow: inset 0 0 5px #ffcc00;
+}
+
+@keyframes moveDownAndLeftRight {
+  0% {
+    top: -100px; /* Start off-screen */
+    left: calc(100vw * var(--random-x)); /* Random horizontal position */
   }
-  
-  .saucer-top {
-    position: absolute;
-    top: -10px;
-    width: 30px;
-    height: 10px;
-    background: #003b5c; /* Navy */
-    border-radius: 50%;
-    box-shadow: inset 0 0 5px #003b5c;
+  50% {
+    top: calc(50vh * var(--random-y)); /* Move in vertical direction */
+    left: calc(50vw * var(--random-x)); /* Move to random horizontal direction */
   }
-  
-  .saucer-bottom {
-    position: absolute;
-    bottom: -5px;
-    width: 40px;
-    height: 10px;
-    background: #00ffef; /* Cyan glow */
-    border-radius: 50%;
-    box-shadow: 0 0 10px #00ffef, 0 0 15px #00ffef;
+  100% {
+    top: 100vh; /* End at the bottom of the screen */
+    left: calc(100vw * var(--random-x)); /* End at random horizontal position */
   }
-  
-  
+}

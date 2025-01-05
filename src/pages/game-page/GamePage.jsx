@@ -1,6 +1,7 @@
 import React from "react";
 import "./GamePage.css";
 import Player from "../../modules/player/Player";
+import EnemySaucer from "../../modules/enemy/EnemySaucer/EnemySaucer";
 
 function GamePage() {
   return (
@@ -13,6 +14,9 @@ function GamePage() {
 
       {/* Player */}
       <Player />
+ 
+      {/* Enemy Saucer */}
+      <EnemySaucer/>
     </div>
   );
 }
