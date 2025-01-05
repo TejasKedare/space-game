@@ -1,74 +1,104 @@
 /* Main Player Container */
 .player {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Spaceship Body */
+.player-body {
+  width: 80px;
+  height: 80px;
+  background-color: #ff2a68; /* Hot Pink */
+  border: 4px solid #00ffef; /* Electric Cyan Border */
+  border-radius: 50%;
+  box-shadow: 0 0 20px #ff2a68, 0 0 40px #ff2a68; /* Neon Glow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Inner Core of the Spaceship */
+.player-core {
+  width: 30px;
+  height: 30px;
+  background-color: #003b5c; /* Deep Navy */
+  border-radius: 50%;
+  box-shadow: inset 0 0 10px #00ffef, inset 0 0 20px #00ffef; /* Inner Glow */
+  animation: pulse 1s infinite;
+}
+
+/* Guns Container */
+.player-guns {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+}
+
+.gun {
+  width: 10px;
+  height: 8px;
+  background-color: #00ffef; /* Cyan */
+  border-radius: 3px;
+  box-shadow: 0 0 10px #00ffef; /* Neon Glow */
+}
+
+/* Left Gun */
+.left-gun {
+  transform: rotate(-15deg);
+}
+
+/* Right Gun */
+.right-gun {
+  transform: rotate(15deg);
+}
+
+/* Thrusters Container */
+.player-thrusters {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  bottom: -20px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* Individual Thrusters */
+.thruster {
+  width: 14px;
+  height: 25px;
+  background: linear-gradient(180deg, #00ffef, transparent);
+  border-radius: 4px;
+  animation: thrust 0.6s infinite;
+  opacity: 0.7;
+}
+
+/* Pulsing Effect for Core */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: inset 0 0 10px #00ffef, inset 0 0 20px #00ffef;
   }
-  
-  /* Spaceship Body */
-  .player-body {
-    width: 80px;
-    height: 80px;
-    background-color: #ff2a68; /* Hot Pink */
-    border: 4px solid #00ffef; /* Electric Cyan Border */
-    border-radius: 50%;
-    box-shadow: 0 0 20px #ff2a68, 0 0 40px #ff2a68; /* Neon Glow */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+  50% {
+    transform: scale(1.2);
+    box-shadow: inset 0 0 15px #00ffef, inset 0 0 30px #00ffef;
   }
-  
-  /* Inner Core of the Spaceship */
-  .player-core {
-    width: 40px;
-    height: 40px;
-    background-color: #003b5c; /* Deep Navy */
-    border-radius: 50%;
-    box-shadow: inset 0 0 10px #00ffef, inset 0 0 20px #00ffef; /* Inner Glow */
-    animation: pulse 1s infinite;
+}
+
+/* Thruster Animation */
+@keyframes thrust {
+  0%, 100% {
+    transform: scaleY(1);
+    opacity: 1;
   }
-  
-  /* Thrusters Container */
-  .player-thrusters {
-    display: flex;
-    gap: 8px;
-    position: absolute;
-    bottom: -20px;
+  50% {
+    transform: scaleY(0.6);
+    opacity: 0.6;
   }
-  
-  /* Individual Thrusters */
-  .thruster {
-    width: 16px;
-    height: 30px;
-    background: linear-gradient(180deg, #00ffef, transparent);
-    border-radius: 4px;
-    animation: thrust 0.6s infinite;
-    opacity: 0.8;
-  }
-  
-  /* Pulsing Effect for Core */
-  @keyframes pulse {
-    0%, 100% {
-      transform: scale(1);
-      box-shadow: inset 0 0 10px #00ffef, inset 0 0 20px #00ffef;
-    }
-    50% {
-      transform: scale(1.2);
-      box-shadow: inset 0 0 15px #00ffef, inset 0 0 30px #00ffef;
-    }
-  }
-  
-  /* Thruster Animation */
-  @keyframes thrust {
-    0%, 100% {
-      transform: scaleY(1);
-      opacity: 1;
-    }
-    50% {
-      transform: scaleY(0.6);
-      opacity: 0.6;
-    }
-  }
-  
+}

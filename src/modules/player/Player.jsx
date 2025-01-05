@@ -94,24 +94,28 @@ const Player = () => {
   }, []);
 
   return (
-    <div
-      className="player"
-      style={{
-        top: `${position.y}px`,
-        left: `${position.x}px`,
-        position: "absolute",
-        transform: `rotate(${rotation}deg)`, // to dynamically apply rotation
-        transformOrigin: "center", // to ensure rotation happens from the center of the spaceship
-      }}
-    >
-      <div className="player-body">
-        <div className="player-core"></div>
-      </div>
-      <div className="player-thrusters">
-        <div className="thruster"></div>
-        <div className="thruster"></div>
-      </div>
-    </div>
+<div
+  className="player"
+  style={{
+    top: `${position.y}px`,
+    left: `${position.x}px`,
+    position: "absolute",
+    transform: `rotate(${rotation}deg)`, // to dynamically apply rotation
+    transformOrigin: "center", // to ensure rotation happens from the center of the spaceship
+  }}
+>
+  <div className="player-body">
+    <div className="player-core"></div>
+  </div>
+  <div className="player-guns">
+    <div className="gun left-gun"></div>
+    <div className="gun right-gun"></div>
+  </div>
+  <div className="player-thrusters">
+    <div className="thruster"></div>
+    <div className="thruster"></div>
+  </div>
+</div>
   );
 };
 
